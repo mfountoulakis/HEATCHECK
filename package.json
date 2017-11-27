@@ -1,0 +1,58 @@
+{
+  "name": "heatcheck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && babel src -d lib  --copy-files",
+    "clean": "rm -rf lib",
+    "lint": "eslint src"
+  },
+  "bin": {
+    "heatcheck": "lib/cli.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "plugins": [
+    "syntax-dynamic-import"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "chalk": "^2.3.0",
+    "clear": "0.0.1",
+    "cli-table2": "^0.2.0",
+    "clui": "^0.3.6",
+    "commander": "^2.11.0",
+    "figlet": "^1.2.0",
+    "github": "^12.0.1",
+    "google-images": "^2.1.0",
+    "image-to-ascii": "^3.0.9",
+    "inquirer": "^4.0.0",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "nba": "^4.0.1",
+    "node-fetch": "^2.0.0-alpha.9",
+    "preferences": "^1.0.0",
+    "simple-git": "^1.81.1",
+    "touch": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
