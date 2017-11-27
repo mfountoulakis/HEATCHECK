@@ -14,6 +14,7 @@ import program from "commander"
 import Table from "cli-table2"
 
 const ctx = new chalk.constructor({ level: 3 });
+const prefs = new Preferences("heatcheck")
 const Spinner = CLI.Spinner
 
 console.log(
@@ -27,3 +28,12 @@ console.log(
         )
     )
 )
+
+program
+    .version('0.1.0')
+    .option('-p, --points', 'points leaders')
+    .option('-b, --blocks', 'blocks leaders')
+    .option('-a, --assists', 'assists leaders')
+    .option('-s, --steals', 'steals leaders')
+
+program.parse(process.argv);
