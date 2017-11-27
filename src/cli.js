@@ -13,4 +13,17 @@ import Preferences from "preferences"
 import program from "commander"
 import Table from "cli-table2"
 
+const ctx = new chalk.constructor({ level: 3 });
 const Spinner = CLI.Spinner
+
+console.log(
+    ctx.bold.yellowBright.bgRed(
+        figlet.textSync("Heat Check!",
+            {
+                font: 'Big Money-ne',
+                horizontalLayout: "full",
+
+            }
+        )
+    )
+)
