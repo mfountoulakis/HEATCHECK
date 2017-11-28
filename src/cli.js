@@ -15,10 +15,22 @@ import Table from "cli-table2"
 
 //utils
 import getLeaders from './utils/getLeaders'
+import getLeaderImageURl from "./utils/getLeaderImageUrl"
 
+//variables
 const ctx = new chalk.constructor({ level: 3 });
 const prefs = new Preferences("heatcheck")
 const Spinner = CLI.Spinner
+
+// constructors
+const player = (name, image_url, playerRank) => {
+    this.name = name;
+    this.image_url = image_url;
+    this.playerRank = playerRank;
+}
+
+//arrays
+var playerNames = []
 
 console.log(
     ctx.bold.yellowBright.bgRed(
