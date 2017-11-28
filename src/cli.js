@@ -13,6 +13,9 @@ import Preferences from "preferences"
 import program from "commander"
 import Table from "cli-table2"
 
+//utils
+import getLeaders from './utils/getLeaders'
+
 const ctx = new chalk.constructor({ level: 3 });
 const prefs = new Preferences("heatcheck")
 const Spinner = CLI.Spinner
@@ -23,17 +26,43 @@ console.log(
             {
                 font: 'Big Money-ne',
                 horizontalLayout: "full",
-
             }
         )
     )
 )
 
 program
-    .version('0.1.0')
+    .command('stat')
+    .alias('s')
     .option('-p, --points', 'points leaders')
     .option('-b, --blocks', 'blocks leaders')
     .option('-a, --assists', 'assists leaders')
     .option('-s, --steals', 'steals leaders')
+    .action(function (option) {
+        switch (true) {
+            case option.points:
+                var answer = "PTS"
+                break
+            case option.blocks:
+                var answer = "BLK"
+                break
+            case option.assists:
+                var answer = "AST"
+                break
+            case option.steals:
+                var answer = "STL"
+                break
+            case option.turnovers:
+                var answer = "TOV"
+                break
+            default:
+                console.log("Sorry, nothing yet for " + answer + ".")
+        }
+        getLeaders(answer)
+    });
 
 program.parse(process.argv);
+
+
+
+
