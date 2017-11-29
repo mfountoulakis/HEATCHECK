@@ -18,8 +18,6 @@ const pushTable = async (playerImage) => {
                     [{ colSpan: 2, content: playerImage }]
                     , ['rank', player.playerRank]
                 );
-
-                console.log("STATSTABLE LENGTH ", statsTable.length)
                 console.log(statsTable.toString())
 
             });
