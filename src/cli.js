@@ -25,7 +25,6 @@ const Spinner = CLI.Spinner
 console.log(
     ctx.bold.yellowBright.bgRed(        
         figlet.textSync("Heat Check!",
-            process.env,
             {
                 font: 'Big Money-ne',
                 horizontalLayout: "full",
