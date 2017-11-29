@@ -1,6 +1,9 @@
 import NBA from "nba"
 import chalk from "chalk"
 import getLeaderImageURl from "./getLeaderImageURL"
+import playerNames from '../helpers/playerNames'
+import pushTable from './pushTable'
+
 
 const getLeaders = async (answer) => {
     try {
@@ -11,13 +14,12 @@ const getLeaders = async (answer) => {
             SeasonType: "Regular Season",
             ActiveFlag: true
         })
-        //move this someplace else
         leagueLeaders.resultSet.rowSet.slice(0, 15).forEach((element) => {
             const playerRank = element[1]
             const playerName = element[2]
-            getLeaderImageURl(playerName, playerRank).then(() => {
-                pushPlayer()
-            });
+            getLeaderImageURl(playerName, playerRank).then((l) => {
+                pushTable()
+            })
         })
     } catch (e) {
         console.log(
