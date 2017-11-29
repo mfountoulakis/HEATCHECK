@@ -22,10 +22,10 @@ const ctx = new chalk.constructor({ level: 3 });
 const prefs = new Preferences("heatcheck")
 const Spinner = CLI.Spinner
 
-
 console.log(
-    ctx.bold.yellowBright.bgRed(
+    ctx.bold.yellowBright.bgRed(        
         figlet.textSync("Heat Check!",
+            process.env,
             {
                 font: 'Big Money-ne',
                 horizontalLayout: "full",
