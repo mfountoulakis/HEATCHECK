@@ -8,11 +8,11 @@ dotenv.config()
 
 const client = new GoogleImages(process.env.SEARCH_ID, process.env.SEARCH_API_KEY);
 
-const getLeaderImageURl = async (playerName, playerRank) => {
+const getLeaderImageURl = async (playerName, playerRank, teamName) => {
     try {
         await client.search(playerName, { size: 'large' })
             .then(images => {
-                playerNames.push(new Player(playerName, images[0].url, playerRank))
+                playerNames.push(new Player(playerName, images[0].url, playerRank, teamName))
             })
     } catch (e) {
         console.log(

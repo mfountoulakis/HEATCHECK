@@ -3,11 +3,7 @@ import playerNames from '../helpers/playerNames'
 import imageToAscii from "image-to-ascii"
 import imageOptions from '../helpers/imageOptions'
 import Table from "cli-table2"
-
-var statsTable = new Table({
-    head: ["Player"]
-
-});
+import statsTable from "../helpers/statsTable"
 
 const pushTable = async (playerImage) => {
     try {
@@ -15,17 +11,19 @@ const pushTable = async (playerImage) => {
             imageToAscii(`${player.image_url}`, imageOptions, (err, converted) => {
                 const playerImage = converted
                 statsTable.push(
-                    [{ colSpan: 2, content: playerImage }]
+                    [{ rowSpan: 4, content: playerImage }],
+                      ['name', player.name]
                     , ['rank', player.playerRank]
+                    , ['team', player.teamName]
                 );
-                console.log(statsTable.toString())
-
             });
         });
 
     } catch (e) {
         console.log("there was an error", e)
     }
+
+
 }
 
 export default pushTable
