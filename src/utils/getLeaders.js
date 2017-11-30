@@ -6,7 +6,7 @@ import playerNames from '../helpers/playerNames'
 import pushTable from './pushTable'
 
 import CLI from "clui"
-var Spinner = new CLI.Spinner;
+var Spinner = new CLI.Spinner('fetching data...');
 
 
 const getLeaders = async (answer) => {
